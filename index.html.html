@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Tamara ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600&family=Caveat:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fce4ec, #e9e5ff, #e0f4f2);
+    font-family: 'Quicksand', sans-serif;
+    color: #92758c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.stars {
+    color: #d69db9;
+    font-size: 23px;
+    letter-spacing: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: normal;
+    font-size: 42px;
+    color: #c487a7;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #a68ca7;
+}
+
+.envelope-area {
+    margin: 75px auto 35px;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#open {
+    display: none;
+}
+
+.envelope {
+    position: relative;
+    width: 290px;
+    height: 180px;
+    background: #eebbd0;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 12px 30px #bd94b855;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-top: 110px solid #e5a9c3;
+    transform-origin: top;
+    transition: transform 0.7s;
+    z-index: 4;
+}
+
+.envelope::after {
+    content: "♡";
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    font-size: 38px;
+    color: white;
+    z-index: 5;
+}
+
+.flap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-bottom: 100px solid #f4c9d9;
+    z-index: 3;
+}
+
+.letter {
+    position: absolute;
+    background: #fffafc;
+    width: 265px;
+    height: 155px;
+    left: 12px;
+    top: 12px;
+    border-radius: 6px;
+    padding: 15px;
+    overflow: hidden;
+    transition: transform 0.9s, height 0.9s;
+    z-index: 2;
+}
+
+.letter h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    font-weight: normal;
+    color: #c184a5;
+    margin: 5px 0;
+}
+
+.letter-content {
+    opacity: 0;
+    transition: opacity 0.6s;
+    line-height: 1.85;
+    font-size: 15px;
+    text-align: left;
+}
+
+.letter-content p {
+    margin-bottom: 18px;
+}
+
+.letter-content .signature {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: #c184a5;
+}
+
+#open:checked ~ .envelope-area .envelope::before {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+#open:checked ~ .envelope-area .letter {
+    height: min(750px, 75vh);
+    transform: translateY(-90px);
+    overflow-y: auto;
+    z-index: 6;
+    padding: 22px;
+    transition-delay: 0.1s;
+}
+
+#open:checked ~ .envelope-area .letter-content {
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+#open:checked ~ .envelope-area .envelope::after {
+    opacity: 0;
+}
+
+.instruction {
+    font-size: 13px;
+    color: #a88aa4;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 50px;
+    font-family: 'Caveat', cursive;
+    font-size: 23px;
+    color: #c184a5;
+}
+
+.decoration {
+    position: fixed;
+    pointer-events: none;
+    font-size: 20px;
+    opacity: 0.6;
+}
+
+.d1 { top: 12%; left: 8%; }
+.d2 { top: 22%; right: 9%; }
+.d3 { bottom: 15%; left: 12%; }
+.d4 { bottom: 10%; right: 10%; }
+
+@media (max-width: 400px) {
+    h1 { font-size: 35px; }
+    .envelope { width: 270px; }
+    .envelope::before {
+        border-left-width: 135px;
+        border-right-width: 135px;
+    }
+    .letter { width: 245px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="decoration d1">♡</div>
+<div class="decoration d2">✧</div>
+<div class="decoration d3">୨ৎ</div>
+<div class="decoration d4">♡</div>
+
+<main class="container">
+
+    <div class="stars">✧ ♡ ✧ ♡ ✧</div>
+
+    <h1>Para Tamara</h1>
+
+    <p class="subtitle">
+        Una cartita hecha especialmente para ti
+    </p>
+
+    <input type="checkbox" id="open">
+
+    <div class="envelope-area">
+
+        <label for="open" class="envelope">
+
+            <div class="flap"></div>
+
+            <article class="letter">
+
+                <div class="letter-content">
+
+                    <h2>Para mi amor ♡</h2>
+
+                    <p>
+                    Mi amor, no sé ni cómo empezar esto,
+                    pero quería escribirte algo para
+                    recordarte lo mucho que te amo.
+                    </p>
+
+                    <p>
+                    Quiero que sepas que eres demasiado
+                    importante para mí, que de verdad me
+                    haces muy feliz y que no sabes lo
+                    bonito que es tenerte en mi vida.
+                    Me encanta que seas tú, me encanta
+                    hablar contigo y hasta las cosas
+                    más pequeñas que compartimos me
+                    hacen feliz.
+                    </p>
+
+                    <p>
+                    A veces quizás no sepa cómo
+                    demostrarte todo lo que siento,
+                    pero créeme que te amo muchísimo.
+                    No quiero que nunca dudes de eso.
+                    Me importas demasiado y quiero que
+                    siempre te sientas querida por mí.
+                    </p>
+
+                    <p>
+                    Quiero seguir estando contigo,
+                    seguir riéndome contigo, molestándote,
+                    contándote mis cosas y compartiendo
+                    muchísimos momentos juntas. No te
+                    voy a prometer que todo será perfecto,
+                    pero sí que te amo de verdad y que
+                    quiero seguir haciendo las cosas
+                    bonitas contigo.
+                    </p>
+
+                    <p>
+                    Gracias por estar en mi vida y por
+                    ser esa personita que quiero tanto.
+                    Espero que podamos seguir juntas
+                    por muchísimo tiempo y que nunca
+                    te falten razones para sentirte amada.
+                    </p>
+
+                    <p>
+                    Te amo muchísimo, mi amor. Y si hay
+                    algo que quiero que tengas siempre
+                    presente es que estoy muy feliz de
+                    tenerte en mi vida. ♡
+                    </p>
+
+                    <p class="signature">
+                        Con mucho amor ♡
+                    </p>
+
+                </div>
+
+            </article>
+
+        </label>
+
+    </div>
+
+    <p class="instruction">
+        Toca el sobre para descubrir tu cartita ♡
+    </p>
+
+    <div class="footer">
+        Hecha con mucho cariño para ti, Tamara.
+    </div>
+
+</main>
+
+</body>
+</html>
